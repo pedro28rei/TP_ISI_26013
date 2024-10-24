@@ -459,6 +459,11 @@
     </hop>
     <hop>
       <from>Regex evaluation</from>
+      <to>Unique rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Unique rows</from>
       <to>Filter rows</to>
       <enabled>Y</enabled>
     </hop>
@@ -599,7 +604,7 @@
     </remotesteps>
     <GUI>
       <xloc>96</xloc>
-      <yloc>256</yloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -620,120 +625,7 @@
     <append>N</append>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>${Internal.Entry.Current.Directory}/../data/output/people_info.xls</name>
-      <extention>xls</extention>
-      <do_not_open_newfile_init>N</do_not_open_newfile_init>
-      <create_parent_folder>N</create_parent_folder>
-      <split>N</split>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format/>
-      <sheetname>Sheet1</sheetname>
-      <autosizecolums>Y</autosizecolums>
-      <nullisblank>N</nullisblank>
-      <protect_sheet>N</protect_sheet>
-      <password>Encrypted </password>
-      <splitevery>0</splitevery>
-      <usetempfiles>N</usetempfiles>
-      <tempdirectory/>
-    </file>
-    <template>
-      <enabled>N</enabled>
-      <append>N</append>
-      <filename>template.xls</filename>
-    </template>
-    <fields>
-      <field>
-        <name>Index</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>Person_ID</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>First_Name</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>Last_Name</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>Sex</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>Phone</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>Email</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>Job</name>
-        <type>String</type>
-        <format/>
-      </field>
-    </fields>
-    <custom>
-      <header_font_name>arial</header_font_name>
-      <header_font_size>10</header_font_size>
-      <header_font_bold>Y</header_font_bold>
-      <header_font_italic>N</header_font_italic>
-      <header_font_underline>no</header_font_underline>
-      <header_font_orientation>horizontal</header_font_orientation>
-      <header_font_color>black</header_font_color>
-      <header_background_color>grey_25pct</header_background_color>
-      <header_row_height>255</header_row_height>
-      <header_alignment>left</header_alignment>
-      <header_image/>
-      <row_font_name>arial</row_font_name>
-      <row_font_size>10</row_font_size>
-      <row_font_color>black</row_font_color>
-      <row_background_color>none</row_background_color>
-    </custom>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>912</xloc>
-      <yloc>160</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Excel output 2</name>
-    <type>ExcelOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <header>Y</header>
-    <footer>N</footer>
-    <encoding/>
-    <append>N</append>
-    <add_to_result_filenames>Y</add_to_result_filenames>
-    <file>
-      <name>${Internal.Entry.Current.Directory}/../data/output/invalid_people.xls</name>
+      <name>${Internal.Entry.Current.Directory}/../data/output/people_info</name>
       <extention>xls</extention>
       <do_not_open_newfile_init>N</do_not_open_newfile_init>
       <create_parent_folder>N</create_parent_folder>
@@ -829,8 +721,126 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>912</xloc>
-      <yloc>368</yloc>
+      <xloc>928</xloc>
+      <yloc>144</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Excel output 2</name>
+    <type>ExcelOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <header>Y</header>
+    <footer>N</footer>
+    <encoding/>
+    <append>N</append>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <file>
+      <name>${Internal.Entry.Current.Directory}/../data/output/invalid_data</name>
+      <extention>xls</extention>
+      <do_not_open_newfile_init>N</do_not_open_newfile_init>
+      <create_parent_folder>N</create_parent_folder>
+      <split>N</split>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <sheetname>Sheet1</sheetname>
+      <autosizecolums>Y</autosizecolums>
+      <nullisblank>N</nullisblank>
+      <protect_sheet>N</protect_sheet>
+      <password>Encrypted </password>
+      <splitevery>0</splitevery>
+      <usetempfiles>N</usetempfiles>
+      <tempdirectory/>
+    </file>
+    <template>
+      <enabled>N</enabled>
+      <append>N</append>
+      <filename>template.xls</filename>
+    </template>
+    <fields>
+      <field>
+        <name>Index</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>Person_ID</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>First_Name</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>Last_Name</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>Sex</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>Phone</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>Email</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>Birth_Date</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>Job</name>
+        <type>String</type>
+        <format/>
+      </field>
+    </fields>
+    <custom>
+      <header_font_name>arial</header_font_name>
+      <header_font_size>10</header_font_size>
+      <header_font_bold>Y</header_font_bold>
+      <header_font_italic>N</header_font_italic>
+      <header_font_underline>no</header_font_underline>
+      <header_font_orientation>horizontal</header_font_orientation>
+      <header_font_color>black</header_font_color>
+      <header_background_color>grey_25pct</header_background_color>
+      <header_row_height>255</header_row_height>
+      <header_alignment>left</header_alignment>
+      <header_image/>
+      <row_font_name>arial</row_font_name>
+      <row_font_size>10</row_font_size>
+      <row_font_color>black</row_font_color>
+      <row_background_color>none</row_background_color>
+    </custom>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>928</xloc>
+      <yloc>304</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -853,13 +863,73 @@
         <conditions>
           <condition>
             <negated>N</negated>
-            <leftvalue>Validation</leftvalue>
+            <leftvalue>Validation_Email</leftvalue>
             <function>=</function>
             <rightvalue/>
             <value>
               <name>constant</name>
               <type>Boolean</type>
               <text>Y</text>
+              <length>-1</length>
+              <precision>-1</precision>
+              <isnull>N</isnull>
+              <mask/>
+            </value>
+          </condition>
+          <condition>
+            <negated>N</negated>
+            <operator>AND</operator>
+            <leftvalue>Phone</leftvalue>
+            <function>IS NOT NULL</function>
+            <rightvalue/>
+          </condition>
+          <condition>
+            <negated>N</negated>
+            <operator>AND</operator>
+            <leftvalue>Birth_Date</leftvalue>
+            <function>IS NOT NULL</function>
+            <rightvalue/>
+          </condition>
+          <condition>
+            <negated>N</negated>
+            <operator>AND</operator>
+            <leftvalue>First_Name</leftvalue>
+            <function>IS NOT NULL</function>
+            <rightvalue/>
+          </condition>
+          <condition>
+            <negated>N</negated>
+            <operator>AND</operator>
+            <leftvalue>Person_ID</leftvalue>
+            <function>IS NOT NULL</function>
+            <rightvalue/>
+          </condition>
+          <condition>
+            <negated>N</negated>
+            <operator>AND</operator>
+            <leftvalue>Birth_Date</leftvalue>
+            <function>&lt;</function>
+            <rightvalue/>
+            <value>
+              <name>constant</name>
+              <type>String</type>
+              <text>2024-20-22</text>
+              <length>-1</length>
+              <precision>-1</precision>
+              <isnull>N</isnull>
+              <mask/>
+            </value>
+          </condition>
+          <condition>
+            <negated>N</negated>
+            <operator>AND</operator>
+            <leftvalue>Birth_Date</leftvalue>
+            <function>&gt;</function>
+            <rightvalue/>
+            <value>
+              <name>constant</name>
+              <type>String</type>
+              <text>1910-01-01</text>
               <length>-1</length>
               <precision>-1</precision>
               <isnull>N</isnull>
@@ -879,7 +949,7 @@
     </remotesteps>
     <GUI>
       <xloc>704</xloc>
-      <yloc>256</yloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -887,16 +957,16 @@
     <name>Regex evaluation</name>
     <type>RegexEval</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <script>.*\.(com|net)$</script>
+    <script>[a-z0-9.\+-]+@[a-z0-9.\+-]+.(com|net)</script>
     <matcher>Email</matcher>
-    <resultfieldname>Validation</resultfieldname>
+    <resultfieldname>Validation_Email</resultfieldname>
     <usevar>N</usevar>
     <allowcapturegroups>Y</allowcapturegroups>
     <replacefields>Y</replacefields>
@@ -909,7 +979,7 @@
     <unix>N</unix>
     <fields>
       <field>
-        <name>Validation</name>
+        <name>Validation_Email</name>
         <type>Boolean</type>
         <format/>
         <group/>
@@ -931,8 +1001,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
-      <yloc>256</yloc>
+      <xloc>432</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1075,8 +1145,47 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>304</xloc>
-      <yloc>256</yloc>
+      <xloc>272</xloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Unique rows</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <count_rows>N</count_rows>
+    <count_field/>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <error_description/>
+    <fields>
+      <field>
+        <name>Person_ID</name>
+        <case_insensitive>N</case_insensitive>
+      </field>
+      <field>
+        <name>Email</name>
+        <case_insensitive>N</case_insensitive>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>592</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
