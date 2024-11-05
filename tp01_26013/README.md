@@ -15,3 +15,7 @@ Este projeto segue uma estrutura de pastas padronizada para facilitar a organiza
   - **input/**: Diretório com os ficheiros com os dados de entrada que servem de base para as transformações e jobs.
   - **output/**: Diretório com os ficheiros com os dados de saída gerados pelas transformações e jobs.
 
+
+## Autor:
+
+Pedro Daniel Fernandes Rei (a26013)
